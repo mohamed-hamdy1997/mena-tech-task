@@ -140,6 +140,7 @@ class CompanyController extends Controller
     {
         $company = Company::findOrFail($id);
         $employees = Employee::where('company_id', $id);
+        Storage::delete('/public/comapniesLogo/'.$company->logo);
         $employees->delete();
         $company->delete();
         return redirect('/companies');
