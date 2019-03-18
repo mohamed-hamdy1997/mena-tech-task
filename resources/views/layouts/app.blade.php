@@ -34,6 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                       @if (!\auth::guest())
                         @if(Auth::user()->rolls->roll=='admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="/companies">Companies</a>
@@ -43,6 +44,7 @@
                                 <a class="nav-link" href="/employees">Employees</a>
                             </li>
                             @endif
+                           @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
